@@ -1,0 +1,10 @@
+{
+	"mainTheme": {
+		"name": "MAIN_THEME",
+		"price": null,
+		"rarity": -1,
+		"embedColor": "#2b2d31",
+		"backgroundColor": "#000000",
+		"accentColor": "#ffffff"
+	}
+}

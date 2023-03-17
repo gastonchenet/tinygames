@@ -1,0 +1,10 @@
+node_modules/
+yarn.lock
+.env*
+*.exe
+src/commands/
+src/events/
+src/structures/
+src/server/
+src/index.js
+json.sqlite
