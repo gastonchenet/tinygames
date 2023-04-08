@@ -2,9 +2,34 @@
 	"mainTheme": {
 		"name": "MAIN_THEME",
 		"price": null,
-		"rarity": -1,
+		"rarity": null,
 		"embedColor": "#2b2d31",
-		"backgroundColor": "#000000",
-		"accentColor": "#ffffff"
+		"textFillColor": "#ffffff",
+		"textBorderColor": "#000000",
+		"primaryColor": "#000000",
+		"secondaryColor": "#000000",
+		"halftone": false
+	},
+	"skyBlue": {
+		"name": "SKY_BLUE",
+		"price": 100,
+		"rarity": 0,
+		"embedColor": "#8196eb",
+		"textFillColor": "#ffffff",
+		"textBorderColor": "#5065c7",
+		"primaryColor": "#8196eb",
+		"secondaryColor": "#81e7eb",
+		"halftone": false
+	},
+	"toxic": {
+		"name": "TOXIC",
+		"price": 100,
+		"rarity": 0,
+		"embedColor": "#60bd46",
+		"textFillColor": "#ffffff",
+		"textBorderColor": "#407d2c",
+		"primaryColor": "#60bd46",
+		"secondaryColor": "#9af04a",
+		"halftone": true
 	}
 }

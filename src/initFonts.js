@@ -10,3 +10,7 @@ registerFont(path.join(DIR, "FredokaOne.ttf"), {
 registerFont(path.join(DIR, "Mynerve.ttf"), {
 	family: "Mynerve",
 });
+
+registerFont(path.join(DIR, "Helvetica.otf"), {
+	family: "Helvetica",
+});
