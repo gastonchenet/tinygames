@@ -1,4 +1,4 @@
-const Canvas = require("canvas");
+const Canvas = require("@napi-rs/canvas");
 
 /**
  * @param {Canvas.CanvasRenderingContext2D} ctx
@@ -73,7 +73,20 @@ function roundImage(ctx, image, x, y, w, h, r) {
 	ctx.restore();
 }
 
+function loadImage(url) {
+	return new Promise(function (resolve, reject) {
+		const img = new Canvas.Image();
+		img.onerror = reject;
+		img.onload = () => {
+			resolve(img);
+		};
+
+		img.src = url;
+	});
+}
+
 module.exports = {
 	roundRect,
 	roundImage,
+	loadImage,
 };

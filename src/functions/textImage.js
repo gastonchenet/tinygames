@@ -1,5 +1,5 @@
 const Client = require("../structures/Client");
-const Canvas = require("canvas");
+const Canvas = require("@napi-rs/canvas");
 const themes = require("../storage/themes.json");
 const { roundRect } = require("./canvasUtils");
 const path = require("path");
@@ -17,8 +17,8 @@ Canvas.loadImage(path.join(__dirname, "../assets/images/halftone.png")).then(
  * @param {themes["mainTheme"]} theme
  * @param {string} text
  */
-function textImage(client, theme, text) {
-	const canvas = Canvas.createCanvas(0, 200);
+async function textImage(client, theme, text) {
+	const canvas = Canvas.createCanvas(500, 200);
 	const ctx = canvas.getContext("2d");
 
 	ctx.font = "40px FredokaOne";
@@ -57,7 +57,7 @@ function textImage(client, theme, text) {
 	ctx.strokeText(text, canvas.width / 2, canvas.height / 2 + 5);
 	ctx.fillText(text, canvas.width / 2, canvas.height / 2 + 3);
 
-	return client.globalData.addImage(canvas.toBuffer());
+	return client.globalData.addImage(await canvas.encode("png"));
 }
 
 module.exports = textImage;

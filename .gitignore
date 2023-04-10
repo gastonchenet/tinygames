@@ -2,10 +2,11 @@ node_modules/
 yarn.lock
 .env*
 *.exe
+*.sqlite
 src/commands/
 src/events/
 src/structures/
 src/server/
 src/modals/
 src/index.js
-json.sqlite
+logs/

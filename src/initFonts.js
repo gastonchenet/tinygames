@@ -1,16 +1,8 @@
-const { registerFont } = require("canvas");
+const { GlobalFonts } = require("@napi-rs/canvas");
 const path = require("path");
 
 const DIR = path.join(__dirname, "./assets/fonts");
 
-registerFont(path.join(DIR, "FredokaOne.ttf"), {
-	family: "FredokaOne",
-});
-
-registerFont(path.join(DIR, "Mynerve.ttf"), {
-	family: "Mynerve",
-});
-
-registerFont(path.join(DIR, "Helvetica.otf"), {
-	family: "Helvetica",
-});
+GlobalFonts.registerFromPath(path.join(DIR, "FredokaOne.ttf"), "FredokaOne");
+GlobalFonts.registerFromPath(path.join(DIR, "Mynerve.ttf"), "Mynerve");
+GlobalFonts.registerFromPath(path.join(DIR, "Helvetica.otf"), "Helvetica");

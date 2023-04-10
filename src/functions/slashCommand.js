@@ -6,7 +6,7 @@ const { Client } = require("discord.js");
  */
 function slashCommand(client, commandName) {
 	let post = client.application.commands;
-	if (process.argv.includes("--dev")) {
+	if (processOptions.dev) {
 		const guild = client.guilds.cache.get(process.env.SUPPORT_GUILD_ID);
 		if (guild) {
 			post = guild.commands;

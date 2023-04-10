@@ -1,0 +1,90 @@
+[
+	{
+		"range": {
+			"max": 499
+		},
+		"icon": "iron_i.png",
+		"emoji": "<:iron1:928324988061249637>",
+		"name": "Iron I"
+	},
+	{
+		"range": {
+			"min": 500,
+			"max": 999
+		},
+		"icon": "iron_ii.png",
+		"emoji": "<:iron2:928324988061245491>",
+		"name": "Iron II"
+	},
+	{
+		"range": {
+			"min": 1000,
+			"max": 1499
+		},
+		"icon": "bronze_i.png",
+		"emoji": "<:bronze1:928324988078014544>",
+		"name": "Bronze I"
+	},
+	{
+		"range": {
+			"min": 1500,
+			"max": 1999
+		},
+		"icon": "bronze_ii.png",
+		"emoji": "<:bronze2:928324988279324702>",
+		"name": "Bronze II"
+	},
+	{
+		"range": {
+			"min": 2000,
+			"max": 2499
+		},
+		"icon": "gold.png",
+		"emoji": "<:gold:928324988073816124>",
+		"name": "Gold"
+	},
+	{
+		"range": {
+			"min": 2500,
+			"max": 2999
+		},
+		"icon": "emerald.png",
+		"emoji": "<:emerald:928324988103184416>",
+		"name": "Emerald"
+	},
+	{
+		"range": {
+			"min": 3000,
+			"max": 3749
+		},
+		"icon": "master.png",
+		"emoji": "<:master:928324987855712356>",
+		"name": "Master"
+	},
+	{
+		"range": {
+			"min": 3750,
+			"max": 5749
+		},
+		"icon": "warrior.png",
+		"emoji": "<:warrior:931861772502204416>",
+		"name": "Warrior"
+	},
+	{
+		"range": {
+			"min": 5750,
+			"max": 7999
+		},
+		"icon": "grand_master.png",
+		"emoji": "<:grandmaster:928324988203843714>",
+		"name": "Grand Master"
+	},
+	{
+		"range": {
+			"min": 8000
+		},
+		"icon": "god_tier.png",
+		"emoji": "<:godtier:928324988442906695>",
+		"name": "God Tier"
+	}
+]

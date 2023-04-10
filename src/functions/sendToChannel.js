@@ -26,10 +26,10 @@ async function sendToChannel(client, guildId, channelId, data) {
 		);
 	} else {
 		const guild = client.guilds.cache.get(guildId);
-		if (!guild) return console.log("Guild not found");
+		if (!guild) return logger.error("Guild not found");
 
 		const channel = guild.channels.cache.get(channelId);
-		if (!channel) return console.log("Channel not found");
+		if (!channel) return logger.error("Channel not found");
 
 		await channel.send(data);
 	}

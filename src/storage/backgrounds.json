@@ -1,0 +1,42 @@
+{
+	"blueSky": {
+		"name": "BLUE_SKY",
+		"image": "blue_sky.png",
+		"price": null
+	},
+	"deepSpace": {
+		"name": "DEEP_SPACE",
+		"image": "deep_space.png",
+		"price": 7500
+	},
+	"greenAurora": {
+		"name": "GREEN_AURORA",
+		"image": "green_aurora.png",
+		"price": 7500
+	},
+	"neonFuture": {
+		"name": "NEON_FUTURE",
+		"image": "neon_future.png",
+		"price": 7500
+	},
+	"pinkSkybase": {
+		"name": "PINK_SKYBASE",
+		"image": "pink_skybase.png",
+		"price": 15000
+	},
+	"purpleFactory": {
+		"name": "PURPLE_FACTORY",
+		"image": "purple_factory.png",
+		"price": 15000
+	},
+	"redNight": {
+		"name": "RED_NIGHT",
+		"image": "red_night.png",
+		"price": 30000
+	},
+	"towerOfPipes": {
+		"name": "TOWER_OF_PIPES",
+		"image": "tower_of_pipes.png",
+		"price": 30000
+	}
+}

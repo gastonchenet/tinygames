@@ -12,7 +12,7 @@
 	},
 	"skyBlue": {
 		"name": "SKY_BLUE",
-		"price": 100,
+		"price": 7500,
 		"rarity": 0,
 		"embedColor": "#8196eb",
 		"textFillColor": "#ffffff",
@@ -23,7 +23,7 @@
 	},
 	"toxic": {
 		"name": "TOXIC",
-		"price": 100,
+		"price": 15000,
 		"rarity": 0,
 		"embedColor": "#60bd46",
 		"textFillColor": "#ffffff",
