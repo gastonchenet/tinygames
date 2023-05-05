@@ -1,2 +1,0 @@
-require("canvas")   <->   require("@napi-rs/canvas")
-.toBuffer()         <->   .encode("png")

@@ -29,13 +29,20 @@ const manager = new Discord.ShardingManager(path.join(__dirname, "index.js"), {
 	totalShards: "auto",
 	respawn: true,
 	shardArgs: process.argv.slice(2),
-	mode: "process",
 });
 
 manager.spawn().catch(logger.error);
 
+const shards = [];
 manager.on("shardCreate", (shard) => {
+	shards.push(shard);
 	logger.info(`Started shard #${shard.id}`);
+
+	shard.on("message", (data) => {
+		if (data.type === "premiumSuccess") {
+			shards.forEach((shard) => shard.send(data));
+		}
+	});
 });
 
 if (!processOptions.dev) {

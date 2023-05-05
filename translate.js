@@ -1,6 +1,7 @@
 const translate = require("translate");
 const fs = require("fs");
 const path = require("path");
+const chalk = require("chalk");
 
 translate.key = process.argv[2];
 translate.engine = "deepl";
@@ -30,9 +31,12 @@ const files = fs.readdirSync(_path).filter((f) => f !== baseFile);
 				translated[object[i].key] = result;
 
 				process.stdout.write(
-					"\r" +
-						`${code}: ` +
-						getProgress(Object.keys(translated).length, object.length, true)
+					getProgress({
+						value: Object.keys(translated).length,
+						maxValue: object.length,
+						displayProgress: true,
+						prefix: `${code}: `,
+					})
 				);
 
 				fs.writeFileSync(
@@ -41,7 +45,13 @@ const files = fs.readdirSync(_path).filter((f) => f !== baseFile);
 				);
 
 				if (Object.keys(translated).length === object.length) {
-					process.stdout.write(` Translation ended ✓\n`);
+					const space = `${code}: Translation done ✓`.length;
+
+					process.stdout.write(
+						`\r${chalk.green(
+							`${code}: Translation done ${chalk.cyan("✓")}`
+						)}${" ".repeat(process.stdout.columns - space)}\n`
+					);
 				}
 			} catch (error) {
 				console.error(error);
@@ -50,26 +60,31 @@ const files = fs.readdirSync(_path).filter((f) => f !== baseFile);
 	}
 })();
 
-function getProgress(value, maxValue, displayProgress = false) {
+function getProgress({
+	value,
+	maxValue,
+	displayProgress = false,
+	prefix = "",
+	length = null,
+}) {
 	const [blank, progress] = [" ", "█"];
-	const progressBar = ["|"];
-
-	const perventage = Math.round((value * 20) / maxValue);
 	const percentage = Math.round((value * 100) / maxValue);
 
-	for (let i = 0; i < perventage; i++) {
-		progressBar.push(progress);
+	let suffix = "|";
+	let progressBar = prefix + "|";
+	const maxSuffix = suffix + ` ${maxValue}/${maxValue} - 100%`;
+
+	if (displayProgress) suffix += ` ${value}/${maxValue} - ${percentage}%`;
+	length ??= process.stdout.columns - progressBar.length - maxSuffix.length;
+
+	const ratio = Math.round((value * length) / maxValue);
+
+	for (let i = 0; i < ratio; i++) {
+		const color = chalk.hsl(Math.round((i / length) * 360), 100, 50);
+		progressBar += color(progress);
 	}
 
-	for (let i = 0; i < 20 - perventage; i++) {
-		progressBar.push(blank);
-	}
+	progressBar += blank.repeat(length - ratio);
 
-	progressBar.push("|");
-
-	return (
-		progressBar.join("") +
-		blank +
-		(displayProgress ? `${value}/${maxValue} - ${percentage}%` : "")
-	);
+	return "\r" + progressBar + suffix;
 }
