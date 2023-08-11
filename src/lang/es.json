@@ -7711,5 +7711,7 @@
   "THEME_PREVIEW": "Vista previa del tema",
   "BACKGROUND_PREVIEW": "Vista previa del fondo",
   "HELP_US": "Ayúdanos a mejorar el bot",
-  "GAMES_RULES": "Reglas de %s"
+  "GAMES_RULES": "Reglas de %s",
+  "FAILTED_CREATING_THREAD": "Error al crear el hilo de diálogo, el juego se ha detenido.",
+  "USING_SHARDS": "Usando %s fragmentos."
 }

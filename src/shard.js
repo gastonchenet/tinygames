@@ -30,12 +30,8 @@ const manager = new Discord.ShardingManager(path.join(__dirname, "index.js"), {
 	shardArgs: process.argv.slice(2),
 });
 
-manager
-	.spawn()
-	.then(() => shards.forEach((shard) => shard.send({ type: "ready" })))
-	.catch(logger.error);
-
 const shards = [];
+
 manager.on("shardCreate", (shard) => {
 	shards.push(shard);
 	logger.info(`Started shard #${shard.id}`);
@@ -48,6 +44,11 @@ manager.on("shardCreate", (shard) => {
 		}
 	});
 });
+
+manager
+	.spawn({ amount: "auto", delay: 15500, timeout: 60000 })
+	.then(() => shards.forEach((shard) => shard.send({ type: "ready" })))
+	.catch(logger.error);
 
 if (!processOptions.dev) {
 	const ap = AutoPoster(process.env.TOPGG_TOKEN, manager);

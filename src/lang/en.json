@@ -7709,5 +7709,7 @@
 	"THEME_PREVIEW": "Theme Preview",
 	"BACKGROUND_PREVIEW": "Background Preview",
 	"HELP_US": "Help us to improve the bot",
-	"GAMES_RULES": "%s's Rules"
+	"GAMES_RULES": "%s's Rules",
+	"FAILTED_CREATING_THREAD": "Failed creating the dialog thread, the game has stopped.",
+	"USING_SHARDS": "Using %s shards."
 }

@@ -7711,5 +7711,7 @@
   "THEME_PREVIEW": "Aperçu du thème",
   "BACKGROUND_PREVIEW": "Aperçu de l'arrière-plan",
   "HELP_US": "Aidez-nous à améliorer le robot",
-  "GAMES_RULES": "Règles de %s"
+  "GAMES_RULES": "Règles de %s",
+  "FAILTED_CREATING_THREAD": "Échec de la création du fil de dialogue, le jeu s'est arrêté.",
+  "USING_SHARDS": "Utilisation de %s shards."
 }
