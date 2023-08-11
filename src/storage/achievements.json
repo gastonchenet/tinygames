@@ -1,0 +1,46 @@
+[
+	{
+		"name": "FIRST_STEPS",
+		"description": "FIRST_STEPS_DESCRIPTION",
+		"property": "stats.played",
+		"expected": 1,
+		"reward_type": "coins.crystals",
+		"reward_amount": 1500,
+		"difficulty": 0,
+		"icon": "newbie.png",
+		"premium": false
+	},
+	{
+		"name": "CENTENNIAL_GAMATHON",
+		"description": "CENTENNIAL_GAMATHON_DESCRIPTION",
+		"property": "stats.played",
+		"expected": 100,
+		"reward_type": "coins.crystals",
+		"reward_amount": 6000,
+		"difficulty": 2,
+		"icon": "100.png",
+		"premium": false
+	},
+	{
+		"name": "EXPANDING_SUPREMACY",
+		"description": "EXPANDING_SUPREMACY_DESCRIPTION",
+		"property": "invitedUsers.length",
+		"expected": 3,
+		"reward_type": "coins.crystals",
+		"reward_amount": 4000,
+		"difficulty": 1,
+		"icon": "goldencrown.png",
+		"premium": false
+	},
+	{
+		"name": "COMMUNITY_CONNECTION",
+		"description": "COMMUNITY_CONNECTION_DESCRIPTION",
+		"property": "supportJoined",
+		"expected": 1,
+		"reward_type": "coins.crystals",
+		"reward_amount": 1000,
+		"difficulty": 0,
+		"icon": "rules.png",
+		"premium": false
+	}
+]

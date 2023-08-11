@@ -1,5 +1,4 @@
 const dotenv = require("dotenv");
-
 const Discord = require("discord.js");
 const { AutoPoster } = require("topgg-autoposter");
 const path = require("path");
@@ -31,7 +30,10 @@ const manager = new Discord.ShardingManager(path.join(__dirname, "index.js"), {
 	shardArgs: process.argv.slice(2),
 });
 
-manager.spawn().catch(logger.error);
+manager
+	.spawn()
+	.then(() => shards.forEach((shard) => shard.send({ type: "ready" })))
+	.catch(logger.error);
 
 const shards = [];
 manager.on("shardCreate", (shard) => {
@@ -39,8 +41,10 @@ manager.on("shardCreate", (shard) => {
 	logger.info(`Started shard #${shard.id}`);
 
 	shard.on("message", (data) => {
-		if (data.type === "premiumSuccess") {
-			shards.forEach((shard) => shard.send(data));
+		switch (data.type) {
+			case "premiumSuccess": {
+				return shards.forEach((shard) => shard.send(data));
+			}
 		}
 	});
 });

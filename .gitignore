@@ -7,5 +7,6 @@ src/events/
 src/structures/
 src/server/
 src/modals/
+src/buttons/
 src/index.js
 logs/
