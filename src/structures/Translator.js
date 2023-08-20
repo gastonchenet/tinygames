@@ -38,7 +38,7 @@ class Translator {
 		let text = language[key] || english[key];
 		for (const i in values) {
 			const value = values[i];
-			text = text.replace("%" + "s".repeat(Number(i) + 1), value.toString());
+			text = text.replace("%" + "s".repeat(Number(i) + 1), value?.toString());
 		}
 
 		return text;

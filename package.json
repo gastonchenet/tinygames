@@ -1,6 +1,6 @@
 {
 	"name": "tiny-games",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Tiny Games is the bot with the bests mini-games in the world.",
 	"main": "./src/index.js",
 	"author": "Du Cassoulet",

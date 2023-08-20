@@ -22,7 +22,12 @@ class SlashInteraction extends Discord.ChatInputCommandInteraction {
 
 		this.user = new UserWithData();
 		this.guild = new GuildWithData();
+
+		/** @type {Discord.User | null} */
+		this.recipient = null;
 	}
+
+	setDuel() {}
 }
 
 class AutocompleteInteraction extends Discord.AutocompleteInteraction {

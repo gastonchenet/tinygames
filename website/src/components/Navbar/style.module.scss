@@ -1,0 +1,25 @@
+.navbar {
+  background: #1e1f2e;
+  border-bottom: #161722 1px solid;
+  width: 100vw;
+  height: 72px;
+  padding: 0 2vw;
+  display: flex;
+  align-items: center;
+
+  .botInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .botIcon {
+      height: 38px;
+      border-radius: 5px;
+    }
+
+    .botName {
+      color: #f1f1f1;
+      font-size: 24px;
+    }
+  }
+}
