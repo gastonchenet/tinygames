@@ -83,7 +83,7 @@ class Game {
 		return true;
 	}
 
-	stop() {
+	async stop() {
 		this.ended = true;
 		this.players.forEach((player) => this.removePlayer(player.id));
 		this.collectors.forEach((collector) => collector.stop());
@@ -91,6 +91,15 @@ class Game {
 
 		this.duration = Date.now() - this.startTimestamp;
 		this.client.games.delete(this.hostId);
+
+		const reply = await this.slash;
+		reply.components.forEach((row) => {
+			row.components.forEach((component) => {
+				component.data.disabled = true;
+			});
+		});
+
+		return reply.edit({ components: reply.components });
 	}
 
 	start() {

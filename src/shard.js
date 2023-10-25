@@ -37,11 +37,7 @@ manager.on("shardCreate", (shard) => {
 	logger.info(`Started shard #${shard.id}`);
 
 	shard.on("message", (data) => {
-		switch (data.type) {
-			case "premiumSuccess": {
-				return shards.forEach((shard) => shard.send(data));
-			}
-		}
+		shards.forEach((shard) => shard.send(data));
 	});
 });
 

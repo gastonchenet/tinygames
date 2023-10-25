@@ -31,5 +31,27 @@
 		"primaryColor": "#60bd46",
 		"secondaryColor": "#9af04a",
 		"halftone": true
+	},
+	"fire": {
+		"name": "FIRE_THEME",
+		"price": 15000,
+		"rarity": 0,
+		"embedColor": "#ffe854",
+		"textFillColor": "#ffffff",
+		"textBorderColor": "#ad4e39",
+		"primaryColor": "#ffe854",
+		"secondaryColor": "#ff6254",
+		"halftone": true
+	},
+	"radioactive": {
+		"name": "RADIOACTIVE",
+		"price": 15000,
+		"rarity": 0,
+		"embedColor": "#64ed58",
+		"textFillColor": "#111f0f",
+		"textBorderColor": "#64ed58",
+		"primaryColor": "#000000",
+		"secondaryColor": "#1a3018",
+		"halftone": true
 	}
 }
