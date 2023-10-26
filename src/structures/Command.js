@@ -109,6 +109,10 @@ class Command {
 			name: "ECONOMY",
 			description: "ECONOMY_DESCRIPTION",
 		},
+		ADMIN: {
+			name: "ADMIN",
+			description: "ADMIN_DESCRIPTION",
+		},
 	};
 
 	static OptionTypes = Discord.ApplicationCommandOptionType;

@@ -92,7 +92,7 @@ class Game {
 		this.duration = Date.now() - this.startTimestamp;
 		this.client.games.delete(this.hostId);
 
-		const reply = await this.slash;
+		const reply = await this.slash.fetchReply();
 		reply.components.forEach((row) => {
 			row.components.forEach((component) => {
 				component.data.disabled = true;
