@@ -1,0 +1,62 @@
+[
+	{
+		"title": "Larger parties",
+		"description": "Increase the maximum party size to Infinity.",
+		"default": 3,
+		"premium": "Infinity"
+	},
+	{
+		"title": "Custom status",
+		"description": "Set a custom status for your profile.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "Random games",
+		"description": "Access the random command in order to play a random game.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "Premium badge",
+		"description": "Get a pretty premium badge on your profile.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "Duel someone",
+		"description": "Duel someone with the duel command.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "Weekly command",
+		"description": "Access the weekly command in order to get a weekly reward.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "Chat channels",
+		"description": "Have the ability to create chat channels to talk with an AI.",
+		"default": 0,
+		"premium": "Infinity"
+	},
+	{
+		"title": "Vote bypass",
+		"description": "Use the command you want without having to vote for the bot on top.gg.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "More challenging",
+		"description": "Get more challenges to do.",
+		"default": false,
+		"premium": true
+	},
+	{
+		"title": "A brand new style",
+		"description": "Get a brand new premium background and theme.",
+		"default": false,
+		"premium": true
+	}
+]

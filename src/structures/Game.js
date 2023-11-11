@@ -47,6 +47,10 @@ class Game {
 		this.client.games.set(this.hostId, this);
 	}
 
+	get attachmentName() {
+		return `${this.name}-${this.hostId}-${Date.now()}.png`;
+	}
+
 	/**
 	 * @param {string[]} settings
 	 */

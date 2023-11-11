@@ -1,0 +1,93 @@
+@import "../../variables.scss";
+
+.eloLeaderboard {
+	display: flex;
+	flex-direction: column;
+	background: $darkColor;
+	border: 1px solid $secondaryColor;
+	border-radius: 10px;
+	gap: 15px;
+	padding: 15px;
+	width: 100%;
+	height: fit-content;
+
+	.leaderboardSlot {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		text-decoration: none;
+
+		.rank {
+			width: 45px;
+			height: 45px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 10px;
+			background: $secondaryColor;
+			border: 1px solid $tertiaryColor;
+			color: $headerColor;
+			font-size: 0.8rem;
+			transition: all 200ms ease;
+		}
+
+		.eloBar {
+			height: 45px;
+			border-radius: 10px;
+			background: $accentColorHover;
+			transition: all 200ms ease;
+
+			&[data-userslot="true"] {
+				background: $green;
+			}
+		}
+
+		.avatar {
+			width: 45px;
+			height: 45px;
+			border-radius: 10px;
+			background: $secondaryColor;
+			border: 1px solid $tertiaryColor;
+		}
+
+		.textData {
+			width: 125px;
+
+			.username {
+				font-size: 0.9rem;
+				color: $textPrimary;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				transition: all 200ms ease;
+			}
+
+			.elo {
+				font-size: 0.8rem;
+				color: $textTertiary;
+
+				&::after {
+					content: " TP";
+				}
+			}
+		}
+
+		&:hover {
+			.rank {
+				background: lighten($secondaryColor, 10%);
+			}
+
+			.eloBar {
+				background: lighten($accentColorHover, 10%);
+
+				&[data-userslot="true"] {
+					background: lighten($green, 10%);
+				}
+			}
+
+			.textData .username {
+				color: $accentColor;
+			}
+		}
+	}
+}

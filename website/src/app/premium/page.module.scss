@@ -1,0 +1,135 @@
+@import "../variables.scss";
+
+.pageContent {
+	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
+	padding: 50px 20dvw;
+
+	.head {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+
+		.title {
+			color: $headerColor;
+			font-size: 3rem;
+		}
+
+		.command {
+			$color: #c9cdfb;
+			$background: #5865f24d;
+
+			background: $background;
+			color: $color;
+			font-size: 1.2rem;
+			padding: 5px 10px;
+			border-radius: 5px;
+			width: fit-content;
+			cursor: default;
+			margin-top: 6px;
+
+			&::before {
+				content: "/";
+			}
+		}
+	}
+
+	.table {
+		min-width: fit-content;
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+
+		.row {
+			display: table-row;
+
+			@mixin cell {
+				border-inline: 1px solid $quaternaryColor;
+				padding: 20px;
+				text-align: center;
+				color: $textTertiary;
+				background: transparentize($secondaryColor, 0.5);
+			}
+
+			&__default {
+				@include cell;
+
+				border-right: 1px solid $accentColor;
+
+				.boolean {
+					color: $red;
+				}
+
+				&__head {
+					@include cell;
+
+					border-right: 1px solid $accentColor;
+					color: $textSecondary;
+					background: $quaternaryColor;
+				}
+			}
+
+			&__premium {
+				@include cell;
+
+				border-right: 1px solid $accentColor;
+				color: $accentColor;
+
+				.boolean {
+					color: $green;
+				}
+
+				&__head {
+					@include cell;
+
+					border-right: 1px solid $accentColor;
+					color: $headerColor;
+					background: $accentColor;
+				}
+			}
+
+			&__title {
+				@include cell;
+
+				text-align: left;
+				color: $textSecondary;
+			}
+
+			&__description {
+				@include cell;
+
+				text-align: left;
+			}
+
+			&:first-child .row {
+				&__default,
+				&__title,
+				&__description {
+					border-top: 1px solid $quaternaryColor;
+				}
+
+				&__premium {
+					border-top: 1px solid $accentColor;
+				}
+			}
+
+			&:nth-child(2) .row {
+				&__title,
+				&__description {
+					border-top: 1px solid $quaternaryColor;
+				}
+			}
+
+			&:last-child .row {
+				&__default,
+				&__title,
+				&__description {
+					border-bottom: 1px solid $quaternaryColor;
+				}
+
+				&__premium {
+					border-bottom: 1px solid $accentColor;
+				}
+			}
+		}
+	}
+}

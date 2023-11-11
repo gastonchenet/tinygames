@@ -1,0 +1,78 @@
+@import "../variables.scss";
+
+.footer {
+	background: $footerColor;
+	padding: 2.5dvw 5dvw;
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+
+	&__leftContent {
+		display: flex;
+		gap: 15px;
+		align-items: center;
+
+		.avatar {
+			width: 64px;
+			height: 64px;
+			border-radius: 50%;
+		}
+
+		.leftTextContent {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.botUsername {
+				color: $headerColor;
+			}
+
+			.botCredits {
+				color: $textSecondary;
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	.footerLinks {
+		display: flex;
+		gap: 50px;
+		justify-content: space-evenly;
+		width: 45dvw;
+
+		.category {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			&__title {
+				color: $headerColor;
+			}
+
+			&__content {
+				display: flex;
+				flex-direction: column;
+				list-style: none;
+				gap: 5px;
+
+				&__element {
+					color: $textSecondary;
+					font-size: 0.8rem;
+					cursor: pointer;
+					transform: translateX(0px);
+					transition: all 200ms ease;
+
+					&:hover {
+						color: $headerColor;
+						transform: translateX(10px);
+					}
+
+					.link {
+						text-decoration: none;
+						color: unset;
+					}
+				}
+			}
+		}
+	}
+}

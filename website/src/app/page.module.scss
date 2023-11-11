@@ -1,0 +1,79 @@
+@import "./variables.scss";
+
+.landing {
+	height: calc(100dvh - 72px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	.title {
+		font-size: 8dvw;
+		color: $headerColor;
+	}
+
+	.description {
+		font-size: 1.5dvw;
+		color: $textTertiary;
+		max-width: 40vw;
+		text-align: center;
+	}
+}
+
+.guildSection {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+
+	.guildCount {
+		color: $headerColor;
+		font-size: 3rem;
+		margin-left: 10dvw;
+	}
+
+	.guilds {
+		width: 100dvw;
+		display: flex;
+		background: $darkColor;
+		padding: 25px;
+		justify-content: space-evenly;
+		border-block: 1px solid $tertiaryColor;
+
+		.guild {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 5px;
+
+			&__icon {
+				height: 100px;
+				width: 100px;
+				border-radius: 50px;
+				transition: all 200ms ease;
+
+				&:hover {
+					border-radius: 15px;
+				}
+			}
+
+			&__content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				&__name {
+					color: $headerColor;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+					max-width: 150px;
+				}
+
+				&__memberCount {
+					color: $textTertiary;
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}

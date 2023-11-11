@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.pageError {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100dvh - 72px);
+	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
+
+	.error {
+		color: $headerColor;
+		font-size: 8dvw;
+		line-height: 1;
+	}
+
+	.title {
+		color: $textTertiary;
+		font-size: 3dvw;
+		line-height: 1;
+	}
+}

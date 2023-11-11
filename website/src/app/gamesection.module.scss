@@ -1,0 +1,100 @@
+@import "./variables.scss";
+
+.gameSection {
+	padding: 100px 10dvw;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
+
+	.title {
+		color: $headerColor;
+		font-size: 3rem;
+	}
+
+	.games {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		border: 1px solid $tertiaryColor;
+		background: darken($primaryColor, 2.5%);
+
+		&__button {
+			color: $textSecondary;
+			background: $secondaryColor;
+			padding: 20px 25px;
+			cursor: pointer;
+			border: none;
+			transition: all 200ms ease;
+
+			&:hover,
+			&[data-active="true"] {
+				color: $textPrimary;
+				background: $tertiaryColor;
+			}
+		}
+	}
+
+	.game {
+		gap: 35px;
+		padding: 35px;
+		border: 1px solid $tertiaryColor;
+		display: flex;
+		background: darken($primaryColor, 2.5%);
+
+		.textContent {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			.gameHeader {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+
+				.new {
+					background: $red;
+					color: $headerColor;
+					padding: 3px 10px;
+					border-radius: 5px;
+					font-size: 0.8rem;
+				}
+
+				.gameName {
+					font-size: 1.5rem;
+					color: $headerColor;
+				}
+
+				.players {
+					color: $textTertiary;
+					font-size: 0.8rem;
+				}
+			}
+
+			.played {
+				color: $textSecondary;
+				font-style: italic;
+				line-height: 1;
+			}
+
+			.rules {
+				color: $textTertiary;
+				font-size: 0.9rem;
+				margin-block: 10px;
+			}
+
+			.tags {
+				display: flex;
+				gap: 10px;
+				margin-top: auto;
+
+				.tag {
+					background: $secondaryColor;
+					color: $textSecondary;
+					padding: 3px 10px;
+					border-radius: 5px;
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}
