@@ -26,6 +26,11 @@ export async function generateMetadata({
 	return {
 		title: `Tiny Games | ${user.tag}`,
 		description: `View ${user.tag}'s profile on Tiny Games.`,
+		openGraph: {
+			title: `Tiny Games | ${user.tag}`,
+			description: `View ${user.tag}'s profile on Tiny Games.`,
+			type: "profile",
+		},
 	};
 }
 
