@@ -4,6 +4,7 @@ import style from "./mainprofile.module.scss";
 import Avatar from "../../components/Avatar";
 import Icon from "../../components/Icon";
 import { cookies } from "next/headers";
+import FallbackImage from "@/app/components/FallbackImage";
 
 export default async function MainProfile({ user }: { user: UserProfile }) {
 	const cookieStore = cookies();
@@ -28,8 +29,9 @@ export default async function MainProfile({ user }: { user: UserProfile }) {
 
 	return (
 		<section className={style.profile}>
-			<img
-				src={`http://129.151.234.121:8080/api/users/${user.id}/background`}
+			<FallbackImage
+				src={`/backgrounds/${user.backgroundImage}`}
+				fallback="/backgrounds/blue_sky.png"
 				alt="User banner"
 				className={style.banner}
 			/>

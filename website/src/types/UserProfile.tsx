@@ -27,4 +27,5 @@ export type UserProfile = {
 	lang: string;
 	coins: UserCoins;
 	history?: HistorySlot[];
+	backgroundImage: string;
 };

@@ -3,6 +3,7 @@
 import type { Command, Game } from "@/types/Command";
 import { useEffect, useRef, useState } from "react";
 import style from "./gamesection.module.scss";
+import FallbackImage from "./components/FallbackImage";
 
 export default function GameSection({
 	games,
@@ -39,8 +40,9 @@ export default function GameSection({
 				))}
 			</article>
 			<article className={style.game}>
-				<img
-					src={`http://129.151.234.121:8080/api/commands/${command.name}/icon`}
+				<FallbackImage
+					src={`/icons/${command.name}.png`}
+					fallback="/icons/trivia.png"
 					alt={`${command.game.name} icon, png, game`}
 					className={style.icon}
 				/>
