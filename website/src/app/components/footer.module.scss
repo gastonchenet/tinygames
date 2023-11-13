@@ -7,10 +7,20 @@
 	justify-content: space-between;
 	margin-top: auto;
 
+	@media screen and (max-width: $mobileWidth) {
+		padding: 5dvh 10dvw;
+		flex-direction: column;
+		gap: 50px;
+	}
+
 	&__leftContent {
 		display: flex;
 		gap: 15px;
 		align-items: center;
+
+		@media screen and (max-width: $mobileWidth) {
+			width: 100%;
+		}
 
 		.avatar {
 			width: 64px;
@@ -39,6 +49,11 @@
 		gap: 50px;
 		justify-content: space-evenly;
 		width: 45dvw;
+
+		@media screen and (max-width: $mobileWidth) {
+			width: 100%;
+			justify-content: space-between;
+		}
 
 		.category {
 			display: flex;

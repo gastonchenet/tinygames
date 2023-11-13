@@ -60,6 +60,16 @@ export default async function Footer() {
 								Premium
 							</Link>
 						</li>
+						<li className={style.category__content__element}>
+							<Link href="/terms-of-service" className={style.link}>
+								Terms of Service
+							</Link>
+						</li>
+						<li className={style.category__content__element}>
+							<Link href="/privacy-policy" className={style.link}>
+								Privacy Policy
+							</Link>
+						</li>
 					</ul>
 				</div>
 				<div className={style.category}>

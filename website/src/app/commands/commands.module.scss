@@ -14,6 +14,12 @@
 		width: fit-content;
 		border: 1px solid $tertiaryColor;
 
+		@media screen and (max-width: $mobileWidth) {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+			width: 100%;
+		}
+
 		.category {
 			color: $textSecondary;
 			background: $secondaryColor;
@@ -27,25 +33,34 @@
 				color: $textPrimary;
 				background: $tertiaryColor;
 			}
+
+			@media screen and (max-width: $mobileWidth) {
+				padding: 10px 20px;
+			}
 		}
 	}
 
 	.commands {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+		grid-template-rows: masonry;
 		gap: 25px;
 		padding: 25px 0;
 		width: 80dvw;
 
+		@media screen and (max-width: $mobileWidth) {
+			display: flex;
+			flex-direction: column;
+		}
+
 		.command {
+			display: inline-block;
 			background: $secondaryColor;
 			border: 1px solid $tertiaryColor;
 			border-radius: 10px;
 			padding: 15px;
-			height: 150px;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
 			transition: all 200ms ease;
 
 			&:hover {
@@ -59,34 +74,34 @@
 			}
 
 			&__name {
-				$color: #c9cdfb;
-				$background: #5865f24d;
-
-				background: $background;
-				color: $color;
-				font-size: 1rem;
-				padding: 5px 10px;
-				border-radius: 5px;
-				width: fit-content;
-				cursor: default;
+				color: $headerColor;
+				font-size: 1.2rem;
 
 				&::before {
 					content: "/";
 				}
 			}
 
-			&__category {
-				color: $textSecondary;
-				font-size: 0.6rem;
-				text-transform: uppercase;
-			}
+			&__textData {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				margin-block: 10px;
 
-			&__description {
-				color: $textSecondary;
-				font-size: 0.9rem;
+				&__category {
+					color: $textSecondary;
+					font-size: 0.6rem;
+					text-transform: uppercase;
+				}
+
+				&__description {
+					color: $textSecondary;
+					font-size: 0.9rem;
+				}
 			}
 
 			&__usages {
+				margin-top: auto;
 				color: $textTertiary;
 				font-size: 0.8rem;
 			}
@@ -94,6 +109,58 @@
 			.badge {
 				width: 30px;
 				height: 30px;
+			}
+
+			.usages {
+				display: flex;
+				flex-direction: column;
+				gap: 5px;
+				margin-block: 10px;
+
+				.usage {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+
+					&__name {
+						$color: #c9cdfb;
+						$background: #5865f24d;
+
+						background: $background;
+						color: $color;
+						font-size: 0.8rem;
+						padding: 3px 8px;
+						border-radius: 5px;
+						width: fit-content;
+						cursor: default;
+
+						&::before {
+							content: "/";
+						}
+					}
+
+					&__option {
+						font-size: 0.8rem;
+						padding: 3px 8px;
+						border-radius: 5px;
+						background: $tertiaryColor;
+						color: $textPrimary;
+						border: 1px solid $quaternaryColor;
+
+						&::before {
+							content: attr(data-type);
+							font-size: 0.5rem;
+							text-transform: uppercase;
+							margin-right: 5px;
+							color: $textTertiary;
+						}
+
+						.required {
+							color: $red;
+							margin-left: 5px;
+						}
+					}
+				}
 			}
 
 			&[data-premium="true"] {

@@ -42,6 +42,7 @@ export default function GameSection({
 				<img
 					src={`http://129.151.234.121:8080/api/commands/${command.name}/icon`}
 					alt={`${command.game.name} icon, png, game`}
+					className={style.icon}
 				/>
 				<div className={style.textContent}>
 					<div className={style.gameHeader}>
@@ -58,7 +59,9 @@ export default function GameSection({
 							</p>
 						)}
 					</div>
-					<p className={style.played}>Played {command.usages} times</p>
+					<p className={style.played}>
+						Played {command.usages.toLocaleString()} times
+					</p>
 					<p className={style.rules}>{command.game.rules}</p>
 					<div className={style.tags}>
 						{command.game.tags.map((tag, key) => (

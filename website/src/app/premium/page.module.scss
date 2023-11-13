@@ -4,14 +4,28 @@
 	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
 	padding: 50px 20dvw;
 
+	@media screen and (max-width: $mobileWidth) {
+		padding: 50px 5dvw;
+	}
+
 	.head {
 		display: flex;
 		gap: 15px;
 		align-items: center;
 
+		@media screen and (max-width: $mobileWidth) {
+			flex-direction: column;
+			gap: 0;
+			align-items: flex-start;
+		}
+
 		.title {
 			color: $headerColor;
 			font-size: 3rem;
+
+			@media screen and (max-width: $mobileWidth) {
+				font-size: 5dvw;
+			}
 		}
 
 		.command {
@@ -29,6 +43,10 @@
 
 			&::before {
 				content: "/";
+			}
+
+			@media screen and (max-width: $mobileWidth) {
+				font-size: 4dvw;
 			}
 		}
 	}
@@ -50,6 +68,12 @@
 				background: transparentize($secondaryColor, 0.5);
 			}
 
+			&__blank {
+				@media screen and (max-width: $mobileWidth) {
+					display: none;
+				}
+			}
+
 			&__default {
 				@include cell;
 
@@ -65,6 +89,14 @@
 					border-right: 1px solid $accentColor;
 					color: $textSecondary;
 					background: $quaternaryColor;
+
+					@media screen and (max-width: $mobileWidth) {
+						display: none;
+					}
+				}
+
+				@media screen and (max-width: $mobileWidth) {
+					display: none;
 				}
 			}
 
@@ -92,12 +124,20 @@
 
 				text-align: left;
 				color: $textSecondary;
+
+				@media screen and (max-width: $mobileWidth) {
+					border-right: 1px solid $accentColor;
+				}
 			}
 
 			&__description {
 				@include cell;
 
 				text-align: left;
+
+				@media screen and (max-width: $mobileWidth) {
+					display: none;
+				}
 			}
 
 			&:first-child .row {

@@ -1,11 +1,47 @@
 "use client";
 
-import type { Command } from "@/types/Command";
+import { OptionType, type Command, type Option } from "@/types/Command";
 import style from "./commands.module.scss";
 import { Poppins } from "next/font/google";
 import React, { useState } from "react";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
+
+type SubOption = {
+	name: string;
+	description: string;
+	type: OptionType;
+	required: boolean;
+};
+type SubCommand = { name: string; options: SubOption[] };
+
+function getSubCommands(name: string, options: Option[]): SubCommand[] {
+	const subCommands: SubCommand[] = [];
+	const subCommand: SubCommand = { name, options: [] };
+
+	for (const option of options) {
+		if (
+			[OptionType.SubCommandGroup, OptionType.SubCommand].includes(option.type)
+		) {
+			subCommands.push(
+				...getSubCommands(`${name} ${option.name}`, option.options ?? [])
+			);
+		} else {
+			subCommand.options.push({
+				name: option.name,
+				description: option.description,
+				type: option.type,
+				required: option.required ?? false,
+			});
+		}
+	}
+
+	if (subCommands.length === 0) {
+		subCommands.push(subCommand);
+	}
+
+	return subCommands;
+}
 
 export default function CommandList({
 	commands,
@@ -42,14 +78,15 @@ export default function CommandList({
 						key={k}
 						data-active={selected === c}
 						onClick={() => select(c)}
+						style={poppins.style}
 					>
-						<p className={poppins.className}>{c}</p>
+						{c}
 					</button>
 				))}
 			</article>
 			<article className={style.commands}>
 				{filtered.map((c, k) => (
-					<div key={k} className={style.command} data-premium={c.premium}>
+					<figure key={k} className={style.command} data-premium={c.premium}>
 						<div className={style.command__header}>
 							<b className={style.command__name}>{c.name}</b>
 							{c.requiresVote && (
@@ -67,12 +104,50 @@ export default function CommandList({
 								/>
 							)}
 						</div>
-						<p className={style.command__category}>{c.category_name}</p>
-						<p className={style.command__description}>{c.description}</p>
+						<figcaption className={style.usages}>
+							{getSubCommands(c.name, c.options ?? []).map(
+								(subCommand, key) => (
+									<div className={style.usage} key={key}>
+										<div className={style.usage__name}>{subCommand.name} </div>
+										{subCommand.options.map((c) => (
+											<p
+												className={style.usage__option}
+												data-type={
+													[
+														"Text",
+														"Integer",
+														"Boolean",
+														"User",
+														"Channel",
+														"Role",
+														"Mentionable",
+														"Number",
+														"Attachment",
+													][c.type - 3]
+												}
+											>
+												{c.name}
+												{c.required && (
+													<span className={style.required}>*</span>
+												)}
+											</p>
+										))}
+									</div>
+								)
+							)}
+						</figcaption>
+						<figcaption className={style.command__textData}>
+							<p className={style.command__textData__category}>
+								{c.category_name}
+							</p>
+							<p className={style.command__textData__description}>
+								{c.description}
+							</p>
+						</figcaption>
 						<p className={style.command__usages}>
 							Used {c.usages.toLocaleString()} times
 						</p>
-					</div>
+					</figure>
 				))}
 			</article>
 		</section>

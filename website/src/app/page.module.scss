@@ -7,9 +7,18 @@
 	align-items: center;
 	justify-content: center;
 
+	@media screen and (max-width: $mobileWidth) {
+		height: fit-content;
+		margin-block: 24dvh;
+	}
+
 	.title {
 		font-size: 8dvw;
 		color: $headerColor;
+
+		@media screen and (max-width: $mobileWidth) {
+			font-size: 13dvw;
+		}
 	}
 
 	.description {
@@ -17,6 +26,11 @@
 		color: $textTertiary;
 		max-width: 40vw;
 		text-align: center;
+
+		@media screen and (max-width: $mobileWidth) {
+			max-width: 80vw;
+			font-size: 4dvw;
+		}
 	}
 }
 
@@ -25,10 +39,19 @@
 	flex-direction: column;
 	gap: 25px;
 
+	@media screen and (max-width: $mobileWidth) {
+		gap: 25px;
+	}
+
 	.guildCount {
 		color: $headerColor;
 		font-size: 3rem;
 		margin-left: 10dvw;
+
+		@media screen and (max-width: $mobileWidth) {
+			font-size: 5dvw;
+			margin-left: 5dvw;
+		}
 	}
 
 	.guilds {
@@ -39,11 +62,34 @@
 		justify-content: space-evenly;
 		border-block: 1px solid $tertiaryColor;
 
+		@media screen and (max-width: $mobileWidth) {
+			padding: 25px 0;
+		}
+
 		.guild {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: center;
 			gap: 5px;
+
+			@for $i from 1 through 10 {
+				@media screen and (max-width: (1800px - 150px * $i)) {
+					&:nth-last-child(#{$i}) {
+						display: none;
+					}
+				}
+			}
+
+			@media screen and (max-width: $mobileWidth) {
+				max-width: 100px;
+
+				@for $i from 1 through 3 {
+					&:nth-child(#{$i}) {
+						display: flex;
+					}
+				}
+			}
 
 			&__icon {
 				height: 100px;
@@ -53,6 +99,11 @@
 
 				&:hover {
 					border-radius: 15px;
+				}
+
+				@media screen and (max-width: $mobileWidth) {
+					height: 75px;
+					width: 75px;
 				}
 			}
 
@@ -66,12 +117,17 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
-					max-width: 150px;
+					max-width: 100px;
 				}
 
 				&__memberCount {
 					color: $textTertiary;
 					font-size: 0.8rem;
+					text-align: center;
+
+					@media screen and (max-width: $mobileWidth) {
+						font-size: 0.7rem;
+					}
 				}
 			}
 		}

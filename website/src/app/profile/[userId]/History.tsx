@@ -13,7 +13,7 @@ export default function History({ user }: { user: UserProfile }) {
 		<section className={style.history}>
 			<h2 className={style.history__title}>Game History</h2>
 			<div className={style.history__content}>
-				{user.history?.map((game, key) => (
+				{user.history?.slice(0, 10)?.map((game, key) => (
 					<article key={key} className={style.game}>
 						<div className={style.game__head}>
 							<h3 className={style.game__head__name}>{game.game}</h3>

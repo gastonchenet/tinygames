@@ -8,6 +8,7 @@ import { getBotData } from "@/utils/getBotData";
 const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
+	metadataBase: new URL("http://localhost:3000"),
 	title: "Tiny Games",
 	generator: "Tiny Games",
 	applicationName: "Tiny Games",

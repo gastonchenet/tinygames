@@ -25,6 +25,12 @@ const descriptionFont = Source_Code_Pro({
 	weight: "400",
 });
 
+function floorNum(num: number) {
+	const rl = Math.max(num.toString().length - 2, 2);
+	const fld = Math.floor(num / 10 ** rl);
+	return fld * 10 ** rl;
+}
+
 export const metadata: Metadata = {
 	title: "Tiny Games | Home Page",
 };
@@ -51,13 +57,8 @@ export default async function Page() {
 			</section>
 			<section className={style.guildSection}>
 				<h2 className={style.guildCount}>
-					+
-					{Math.floor(
-						bot.guild_count /
-							(bot.guild_count.toString().length -
-								Math.min(bot.guild_count.toString().length - 1, 2))
-					).toLocaleString()}{" "}
-					servers trusts {bot.username}
+					+{floorNum(bot.guild_count).toLocaleString()} servers trusts{" "}
+					{bot.username}
 				</h2>
 				<article className={style.guilds}>
 					{guilds.map((guild, key) => (

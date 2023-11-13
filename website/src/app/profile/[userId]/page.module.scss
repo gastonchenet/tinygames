@@ -7,11 +7,21 @@
 	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
 	min-height: calc(100dvh - 72px);
 
+	@media screen and (max-width: $mobileWidth) {
+		flex-direction: column;
+		padding: 25px 5dvw;
+		gap: 25px;
+	}
+
 	.side {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		gap: 50px;
+
+		@media screen and (max-width: $mobileWidth) {
+			gap: 25px;
+		}
 	}
 }
 

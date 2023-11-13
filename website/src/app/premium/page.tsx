@@ -30,7 +30,7 @@ export default async function Page() {
 			<table className={style.table}>
 				<tr className={style.row}>
 					<th />
-					<th />
+					<th className={style.row__blank} />
 					<th className={style.row__default__head}>Classic</th>
 					<th className={style.row__premium__head}>Tiny Premium</th>
 				</tr>
