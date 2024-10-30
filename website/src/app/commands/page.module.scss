@@ -1,9 +1,0 @@
-@import "../variables.scss";
-
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: linear-gradient(180deg, $primaryColor 50%, $footerColor 100%);
-	min-height: calc(100dvh - 72px);
-}
